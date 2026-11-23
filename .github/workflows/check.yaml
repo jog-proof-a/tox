@@ -67,7 +67,6 @@ jobs:
         env:
           PYTEST_ADDOPTS: "-vv --durations=20"
           DIFF_AGAINST: ${{ github.event.pull_request.base.sha || 'HEAD' }}
-          PYTEST_XDIST_AUTO_NUM_WORKERS: 0
       - name: 📤 Upload test timings
         if: ${{ !cancelled() }} # codespell:ignore cancelled
         uses: actions/upload-artifact@v7.0.2
